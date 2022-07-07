@@ -5,3 +5,13 @@ ShareTheLove@07
 git remote set-url origin https://github.com/SaturLearnCode/ToDoAppJS.git
 
 Project = Repository(repo)
+Working directory
+Commit = Git's way of "saving"
+Staging
+
+git status
+git add -A
+git status
+git commit -m "update message"
+
+git checkout -- .
