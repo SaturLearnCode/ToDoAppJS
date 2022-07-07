@@ -2,7 +2,7 @@ const exp = require("constants")
 const { application } = require("express")
 let express = require("express")
 let { MongoClient, ObjectId } = require("mongodb")
-let sanitizeHTML = require("sanitize-html")
+//let sanitizeHTML = require("sanitize-html")
 
 let app = express()
 let db
@@ -81,14 +81,14 @@ app.get("/", function (req, res) {
 })
 
 app.post("/create-item", function (req, res) {
-  let safteText = sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
+  let safteText = req.body.text //sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
   db.collection("items").insertOne({ text: safteText }, function (err, info) {
     res.json({ _id: info.insertedId, safteText })
   })
 })
 
 app.post("/update-item", function (req, res) {
-  let safteText = sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
+  let safteText = req.body.text //sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
   db.collection("items").findOneAndUpdate({ _id: new ObjectId(req.body.id) }, { $set: { text: safteText } }, function () {
     res.send("Success")
   })
