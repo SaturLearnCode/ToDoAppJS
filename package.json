@@ -1,8 +1,7 @@
 {
   "name": "ToDoAppJS",
   "version": "1.0.0",
-  "description": "",
-  "main": "expressTest.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.18.1",
     "mongodb": "^4.7.0",
@@ -16,5 +15,14 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaturLearnCode/ToDoAppJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SaturLearnCode/ToDoAppJS/issues"
+  },
+  "homepage": "https://github.com/SaturLearnCode/ToDoAppJS#readme",
+  "description": ""
 }
