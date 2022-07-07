@@ -32,7 +32,7 @@ function passwordProtected(req, res, next) {
   if (req.headers.authorization == "Basic dG9kbzp0b2Rv") {
     next()
   } else {
-    res.status(401).send("Authentication required")
+    res.status(401).send("Authentication required.")
   }
 }
 

@@ -1,3 +1,7 @@
 Heroku
 satur.wordpress@gmail.com
 ShareTheLove@07
+
+git remote set-url origin https://github.com/SaturLearnCode/ToDoAppJS.git
+
+Project = Repository(repo)
