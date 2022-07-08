@@ -81,15 +81,15 @@ app.get("/", function (req, res) {
 })
 
 app.post("/create-item", function (req, res) {
-  let safteText = req.body.text //sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
-  db.collection("items").insertOne({ text: safteText }, function (err, info) {
-    res.json({ _id: info.insertedId, safteText })
+  let safeText = req.body.text //sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
+  db.collection("items").insertOne({ text: safeText }, function (err, info) {
+    res.json({ _id: info.insertedId, text: safeText })
   })
 })
 
 app.post("/update-item", function (req, res) {
-  let safteText = req.body.text //sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
-  db.collection("items").findOneAndUpdate({ _id: new ObjectId(req.body.id) }, { $set: { text: safteText } }, function () {
+  let safeText = req.body.text //sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
+  db.collection("items").findOneAndUpdate({ _id: new ObjectId(req.body.id) }, { $set: { text: safeText } }, function () {
     res.send("Success")
   })
 })
