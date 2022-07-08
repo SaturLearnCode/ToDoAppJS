@@ -1,3 +1,6 @@
+const dotenv = require("dotenv")
+dotenv.config()
+
 const exp = require("constants")
 const { application } = require("express")
 let express = require("express")
@@ -15,7 +18,7 @@ if (port == null || port == "") {
 app.use(express.static("public"))
 
 async function go() {
-  let client = new MongoClient("mongodb+srv://todoapp_user:todoapp_pass@cluster0.7lplzok.mongodb.net/ToDoApp?retryWrites=true&w=majority")
+  let client = new MongoClient(process.env.CONNECTIONSTRING)
   await client.connect()
   db = client.db()
   app.listen(port)
