@@ -15,7 +15,7 @@ if (port == null || port == "") {
 app.use(express.static("public"))
 
 async function go() {
-  let client = new MongoClient("mongodb+srv://todoapp_user:todoapp_pass@cluster0.7lplzok.mongodb.net/ToDoAppJS?retryWrites=true&w=majority")
+  let client = new MongoClient("mongodb+srv://todoapp_user:todoapp_pass@cluster0.7lplzok.mongodb.net/ToDoApp?retryWrites=true&w=majority")
   await client.connect()
   db = client.db()
   app.listen(port)
@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: false }))
 
 function passwordProtected(req, res, next) {
   res.set("WWW-Authenticate", 'Basic realm="Simple Todo App"')
-  // console.log(req.headers.authorization)
+  console.log(req.headers)
   if (req.headers.authorization == "Basic dG9kbzp0b2Rv") {
     next()
   } else {
